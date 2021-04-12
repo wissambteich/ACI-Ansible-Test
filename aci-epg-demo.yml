@@ -3,9 +3,9 @@
   hosts: localhost
   gather_facts: false
   vars:
-#    aci_host: IPAddressOfACI
-#    aci_username: admin
-#    aci_password: SuppliedPassword
+    aci_host: sandboxapicdc.cisco.com
+    aci_username: admin
+    aci_password: ciscopsdt
     aci_tenant: wisstest-tenant
     aci_ap_name: wisstest-apps
     aci_bd: wisstest-bridge
