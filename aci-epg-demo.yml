@@ -11,8 +11,8 @@
     aci_bd: wisstest-bridge
     aci_vrf: wisstest-vrf
     aci_epgs:
-      - _epg: NewState
-        _desc: obviously the best
+      - _epg: FirstState
+        _desc: First state EPG
       - _epg: Arizona
         _desc: really hot
       - _epg: Utah
@@ -31,6 +31,8 @@
         _desc: beautiful to visit
       - _epg: Florida
         _desc: watch out for Florida man
+      - _epg: LastState
+        _desc: Last state EPG
     
 
   tasks:
