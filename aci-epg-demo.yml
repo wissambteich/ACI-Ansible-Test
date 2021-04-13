@@ -1,15 +1,15 @@
 ---
-- name: Create a Tenant, App profile, VRF, Bridge Domain, and 10 EPGs
+- name: Create a Tenant, App profile, VRF, Bridge Domain, and many EPGs
   hosts: localhost
   gather_facts: false
   vars:
     aci_host: sandboxapicdc.cisco.com
     aci_username: admin
     aci_password: ciscopsdt
-    aci_tenant: wisstest-tenant
-    aci_ap_name: wisstest-apps
-    aci_bd: wisstest-bridge
-    aci_vrf: wisstest-vrf
+    aci_tenant: Wtest-tenant
+    aci_ap_name: Wtest-apps
+    aci_bd: Wtest-bridge
+    aci_vrf: Wtest-vrf
     aci_epgs:
       - _epg: FirstState
         _desc: First state EPG
@@ -43,7 +43,7 @@
       password: "{{ aci_password }}"
       tenant: "{{ aci_tenant }}"
       description: Greg Ansible Testing
-      state: absent
+      state: present
       validate_certs: false
 
   - name: Add a new AP
@@ -54,7 +54,7 @@
       tenant: "{{ aci_tenant }}"
       ap: "{{ aci_ap_name }}"
       description: Greg Ansible Testing
-      state: absent
+      state: present
       validate_certs: false
 
   - name: Add a new VRF to a tenant
@@ -67,7 +67,7 @@
       descr: Greg Ansible Testing
       policy_control_preference: enforced
       policy_control_direction: ingress
-      state: absent
+      state: present
       validate_certs: false
 
   - name: Add Bridge Domain
@@ -78,7 +78,7 @@
       tenant: "{{ aci_tenant }}"
       bd: "{{ aci_bd }}"
       vrf: "{{ aci_vrf }}"
-      state: absent
+      state: present
       validate_certs: false
 
   - name: Add new EPGs
@@ -93,7 +93,7 @@
       bd: "{{ aci_bd }}"
       priority: unspecified
       intra_epg_isolation: unenforced
-      state: absent
+      state: present
       validate_certs: false
     loop: "{{ aci_epgs }}"
     loop_control:
