@@ -1,6 +1,7 @@
 ---
 - name: Create a Tenant, App profile, VRF, Bridge Domain, and 10 EPGs
-  hosts: localhost
+  hosts: apic
+  connection: local
   gather_facts: false
   vars:
     aci_host: sandboxapicdc.cisco.com
