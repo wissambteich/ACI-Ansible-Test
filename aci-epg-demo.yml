@@ -3,9 +3,9 @@
   hosts: localhost
   gather_facts: false
   vars:
-    aci_host: sandboxapicdc.cisco.com
+    aci_host: 10.10.20.14
     aci_username: admin
-    aci_password: ciscopsdt
+    aci_password: C1sco12345
     aci_tenant: Wtest-tenant
     aci_ap_name: Wtest-apps
     aci_bd: Wtest-bridge
