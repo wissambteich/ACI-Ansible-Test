@@ -11,7 +11,7 @@
     aci_bd: wisstest-bridge
     aci_vrf: wisstest-vrf
     aci_epgs:
-      - _epg: Texas
+      - _epg: NewState
         _desc: obviously the best
       - _epg: Arizona
         _desc: really hot
