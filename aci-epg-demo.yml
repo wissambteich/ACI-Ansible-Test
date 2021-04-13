@@ -13,7 +13,7 @@
     aci_epgs:
       - _epg: FirstState
         _desc: First state EPG
-      - _epg: Arizona
+      - _epg: Ayrizona
         _desc: really hot
       - _epg: Utah
         _desc: boring
