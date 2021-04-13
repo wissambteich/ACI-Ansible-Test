@@ -43,7 +43,7 @@
       password: "{{ aci_password }}"
       tenant: "{{ aci_tenant }}"
       description: Greg Ansible Testing
-      state: present
+      state: absent
       validate_certs: false
 
   - name: Add a new AP
@@ -54,7 +54,7 @@
       tenant: "{{ aci_tenant }}"
       ap: "{{ aci_ap_name }}"
       description: Greg Ansible Testing
-      state: present
+      state: absent
       validate_certs: false
 
   - name: Add a new VRF to a tenant
@@ -67,7 +67,7 @@
       descr: Greg Ansible Testing
       policy_control_preference: enforced
       policy_control_direction: ingress
-      state: present
+      state: absent
       validate_certs: false
 
   - name: Add Bridge Domain
@@ -78,7 +78,7 @@
       tenant: "{{ aci_tenant }}"
       bd: "{{ aci_bd }}"
       vrf: "{{ aci_vrf }}"
-      state: present
+      state: absent
       validate_certs: false
 
   - name: Add new EPGs
@@ -93,7 +93,7 @@
       bd: "{{ aci_bd }}"
       priority: unspecified
       intra_epg_isolation: unenforced
-      state: present
+      state: absent
       validate_certs: false
     loop: "{{ aci_epgs }}"
     loop_control:
