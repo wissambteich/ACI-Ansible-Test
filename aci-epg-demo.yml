@@ -80,6 +80,15 @@
       vrf: "{{ aci_vrf }}"
       state: present
       validate_certs: false
+      
+  - name: Add a new physical domain
+    aci_domain:
+      host: "{{ aci_host }}"
+      username: "{{ aci_username }}"
+      password: "{{ aci_password }}"
+      domain: phys_dom
+      domain_type: phys
+      state: present
 
   - name: Add new EPGs
     aci_epg:
@@ -91,6 +100,7 @@
       epg: "{{ all_epgs._epg }}"
       description: "{{ all_epgs._desc}}"
       bd: "{{ aci_bd }}"
+      domain: "{{ aci_domain }}"
       priority: unspecified
       intra_epg_isolation: unenforced
       state: present
