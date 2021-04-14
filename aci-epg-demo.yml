@@ -90,6 +90,7 @@
       domain: "{{ phys_domain }}
       domain_type: phys
       state: present
+      validate_certs: false
 
   - name: Add new EPGs
     aci_epg:
