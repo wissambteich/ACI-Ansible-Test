@@ -125,4 +125,3 @@
       loop_control:
         loop_var: all_epgs
       validate_certs: false
-     delegate_to: localhost
