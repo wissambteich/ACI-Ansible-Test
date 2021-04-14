@@ -117,11 +117,12 @@
       password: "{{ aci_password }}"
       tenant: "{{ aci_tenant }}"
       ap: "{{ aci_ap_name }}"
-      epg: "{{ all_epgs._epg }}"
+      epg: "{{ aci_epgs._epg=FirstState }}"
       domain: "{{ phys_domain }}"
       domain_type: phys
       state: present
-      loop: "{{ aci_epgs }}"
-      loop_control:
-        loop_var: all_epgs
       validate_certs: false
+     # loop: "{{ aci_epgs }}"
+     # loop_control:
+     #   loop_var: all_epgs
+
