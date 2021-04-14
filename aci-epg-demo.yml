@@ -88,6 +88,7 @@
       username: "{{ aci_username }}"
       password: "{{ aci_password }}"
       domain: "{{ phys_domain }}"
+      domain_type: phys
       state: present
       validate_certs: false
 
