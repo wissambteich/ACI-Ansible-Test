@@ -117,7 +117,7 @@
       password: "{{ aci_password }}"
       tenant: "{{ aci_tenant }}"
       ap: "{{ aci_ap_name }}"
-      epg: "{{ aci_epgs._epg=FirstState }}"
+      epg: "{{ aci_epgs }}"
       domain: "{{ phys_domain }}"
       domain_type: phys
       state: present
