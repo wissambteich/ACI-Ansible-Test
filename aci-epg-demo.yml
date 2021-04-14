@@ -109,3 +109,20 @@
     loop: "{{ aci_epgs }}"
     loop_control:
       loop_var: all_epgs
+      
+  - name: Add a new physical domain to EPG binding
+    aci_epg_to_domain:
+      host: "{{ aci_host }}"
+      username: "{{ aci_username }}"
+      password: "{{ aci_password }}"
+      tenant: "{{ aci_tenant }}"
+      ap: "{{ aci_ap_name }}"
+      epg: "{{ all_epgs._epg }}"
+      domain: "{{ phys_domain }}"
+      domain_type: phys
+      state: present
+      loop: "{{ aci_epgs }}"
+      loop_control:
+        loop_var: all_epgs
+      validate_certs: false
+     delegate_to: localhost
