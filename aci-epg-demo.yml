@@ -10,7 +10,7 @@
     aci_ap_name: Wtest-apps
     aci_bd: Wtest-bridge
     aci_vrf: Wtest-vrf
-    phys_domain: phys_dom
+    phys_domain: Wtest-phys_dom
     aci_epgs:
       - _epg: FirstState
         _desc: First state EPG
