@@ -102,7 +102,6 @@
       epg: "{{ all_epgs._epg }}"
       description: "{{ all_epgs._desc}}"
       bd: "{{ aci_bd }}"
-      domain: "{{ phys_domain }}"
       priority: unspecified
       intra_epg_isolation: unenforced
       state: present
