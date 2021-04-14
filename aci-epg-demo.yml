@@ -87,7 +87,7 @@
       host: "{{ aci_host }}"
       username: "{{ aci_username }}"
       password: "{{ aci_password }}"
-      domain: "{{ phys_domain }}
+      domain: "{{ phys_domain }}"
       state: present
       validate_certs: false
 
