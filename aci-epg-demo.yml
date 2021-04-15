@@ -11,6 +11,7 @@
     aci_bd: Wtest-bridge
     aci_vrf: Wtest-vrf
     phys_domain: Wtest-phys_dom
+    aci_aep: Wtest-AEP
     aci_epgs:
       - _epg: FirstState
         _desc: First state EPG
@@ -97,7 +98,7 @@
       host: "{{ aci_host }}"
       username: "{{ aci_username }}"
       password: "{{ aci_password }}"
-      aep: ACI-AEP
+      aep: "{{ aci_aep }}"
       description: default
       infra_vlan: true
       state: present    
@@ -108,7 +109,7 @@
       host: "{{ aci_host }}"
       username: "{{ aci_username }}"
       password: "{{ aci_password }}"
-      aep: ACI-AEP
+      aep: "{{ aci_aep }}"
       domain: "{{ phys_domain }}"
       domain_type: phys
       state: present
