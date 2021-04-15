@@ -91,6 +91,17 @@
       domain_type: phys
       state: present
       validate_certs: false
+      
+  - name: Add a new AEP
+    aci_aep:
+      host: "{{ aci_host }}"
+      username: "{{ aci_username }}"
+      password: "{{ aci_password }}"
+      aep: ACI-AEP
+      description: default
+      infra_vlan: true
+      state: present    
+      validate_certs: false
 
   - name: Add new EPGs
     aci_epg:
