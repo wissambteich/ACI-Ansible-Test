@@ -102,6 +102,17 @@
       infra_vlan: true
       state: present    
       validate_certs: false
+      
+  - name: Add AEP to domain binding
+    aci_aep_to_domain: &binding_present
+      host: "{{ aci_host }}"
+      username: "{{ aci_username }}"
+      password: "{{ aci_password }}"
+      aep: ACI-AEP
+      domain: "{{ phys_domain }}"
+      domain_type: phys
+      state: present
+      validate_certs: false
 
   - name: Add new EPGs
     aci_epg:
