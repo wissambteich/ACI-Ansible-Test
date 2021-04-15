@@ -92,23 +92,23 @@
       state: present
       validate_certs: false
 
- # - name: Add new EPGs
- #   aci_epg:
-  #    host: "{{ aci_host }}"
-  #    username: "{{ aci_username }}"
-  #    password: "{{ aci_password }}"
-  #    tenant: "{{ aci_tenant }}"
-  #    ap: "{{ aci_ap_name }}"
-  #    epg: "{{ all_epgs._epg }}"
-  #    description: "{{ all_epgs._desc}}"
-  #    bd: "{{ aci_bd }}"
-  #    priority: unspecified
-  #    intra_epg_isolation: unenforced
-  #    state: present
-  #    validate_certs: false
-  #  loop: "{{ aci_epgs }}"
-  #  loop_control:
-  #    loop_var: all_epgs
+  - name: Add new EPGs
+    aci_epg:
+      host: "{{ aci_host }}"
+      username: "{{ aci_username }}"
+      password: "{{ aci_password }}"
+      tenant: "{{ aci_tenant }}"
+      ap: "{{ aci_ap_name }}"
+      epg: "{{ all_epgs._epg }}"
+      description: "{{ all_epgs._desc}}"
+      bd: "{{ aci_bd }}"
+      priority: unspecified
+      intra_epg_isolation: unenforced
+      state: present
+      validate_certs: false
+    loop: "{{ aci_epgs }}"
+    loop_control:
+      loop_var: all_epgs
       
   - name: Add a new physical domain to EPG binding
     aci_epg_to_domain:
