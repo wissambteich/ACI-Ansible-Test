@@ -100,6 +100,7 @@
       username: "{{ aci_username }}"
       password: "{{ aci_password }}"
       pool: Wtest-VLAN-Pool
+      block_name: Wtest-VLAN-Block
       block_start: 20
       block_end: 50
       state: present
