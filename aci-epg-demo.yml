@@ -82,6 +82,28 @@
       vrf: "{{ aci_vrf }}"
       state: present
       validate_certs: false
+  
+  - name: Add a new VLAN Pool
+    aci_vlan_pool:
+      host: "{{ aci_host }}"
+      username: "{{ aci_username }}"
+      password: "{{ aci_password }}"
+      pool: Wtest-VLAN-Pool
+      pool_allocation_mode: dynamic
+      description: Production VLANs
+      state: present
+      validate_certs: false
+      
+  - name: Add a new VLAN encap block
+    aci_vlan_pool_encap_block:
+      host: "{{ aci_host }}"
+      username: "{{ aci_username }}"
+      password: "{{ aci_password }}"
+      pool: Wtest-VLAN-Pool
+      block_start: 20
+      block_end: 50
+      state: present
+      validate_certs: false
       
   - name: Add a new physical domain
     aci_domain:
