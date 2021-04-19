@@ -103,6 +103,7 @@
       block_name: Wtest-VLAN-Block
       block_start: 20
       block_end: 50
+      pool_mode: static
       state: present
       validate_certs: false
       
