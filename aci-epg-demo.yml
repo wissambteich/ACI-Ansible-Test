@@ -101,7 +101,6 @@
       password: "{{ aci_password }}"
       block_name: Wtest-VLAN-Pool
       pool: Wtest-VLAN-Pool
-      pool_name: Wtest-VLAN-Pool
       block_start: 20
       block_end: 50
       pool_allocation_mode: static
