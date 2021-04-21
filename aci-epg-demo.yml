@@ -104,8 +104,7 @@
       pool_name: Wtest-VLAN-Pool
       block_start: 20
       block_end: 50
-      mode: static
-      pool_mode: static
+      pool_allocation_mode: static
       state: present
       validate_certs: false
       
