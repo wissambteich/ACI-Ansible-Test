@@ -89,7 +89,7 @@
       username: "{{ aci_username }}"
       password: "{{ aci_password }}"
       pool: Wtest-VLAN-Pool
-      pool_allocation_mode: dynamic
+      pool_allocation_mode: static
       description: Production VLANs
       state: present
       validate_certs: false
