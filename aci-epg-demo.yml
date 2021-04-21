@@ -15,8 +15,8 @@
     aci_aep: Wtest-AEP
     vlan_pool: Wtest-VLAN-Pool
     aci_epgs:
-      - _epg: FirstState
-        _desc: First state EPG
+#      - _epg: FirstState
+ #       _desc: First state EPG
       - _epg: Ayrizona
         _desc: really hot
       - _epg: Utah
@@ -29,8 +29,8 @@
         _desc: corn right...corn
       - _epg: Idaho
         _desc: waffle fries
-      - _epg: Washington
-        _desc: rain I think
+  #    - _epg: Washington
+   #     _desc: rain I think
       - _epg: California
         _desc: beautiful to visit
       - _epg: Florida
