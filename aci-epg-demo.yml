@@ -13,6 +13,7 @@
     phys_domain: Wtest-phys_dom
     block_name: [20-50]
     aci_aep: Wtest-AEP
+    vlan_pool: Wtest-VLAN-Pool
     aci_epgs:
       - _epg: FirstState
         _desc: First state EPG
@@ -89,24 +90,24 @@
       host: "{{ aci_host }}"
       username: "{{ aci_username }}"
       password: "{{ aci_password }}"
-      pool: Wtest-VLAN-Pool
+      pool: "{{ vlan_pool }}"
       pool_allocation_mode: static
       description: Production VLANs
       state: present
       validate_certs: false
       
-  - name: Add a new VLAN encap block
-    aci_vlan_pool_encap_block:
-      host: "{{ aci_host }}"
-      username: "{{ aci_username }}"
-      password: "{{ aci_password }}"
-      pool: Wtest-VLAN-Pool
-      block_start: 20
-      block_end: 50
-      pool_allocation_mode: static
-      block_name: "{{ block_name }}"
-      state: present
-      validate_certs: false
+#  - name: Add a new VLAN encap block
+ #   aci_vlan_pool_encap_block:
+  #    host: "{{ aci_host }}"
+   #   username: "{{ aci_username }}"
+    #  password: "{{ aci_password }}"
+   #   pool: Wtest-VLAN-Pool
+   #   block_start: 20
+   #   block_end: 50
+   #   pool_allocation_mode: static
+   #   block_name: "{{ block_name }}"
+   #   state: present
+   #   validate_certs: false
       
   - name: Add a new physical domain
     aci_domain:
@@ -138,6 +139,19 @@
       domain: "{{ phys_domain }}"
       domain_type: phys
       state: present
+      validate_certs: false
+      
+  - name: Add domain to VLAN pool binding
+    aci_domain_to_encap_pool:
+      host: "{{ aci_host }}"
+      username: "{{ aci_username }}"
+      password: "{{ aci_password }}"
+      domain: "{{ phys_domain }}"
+      domain_type: phys
+      pool: "{{ vlan_pool }}"
+      pool_type: vlan
+      pool_allocation_mode: static
+      state: present     
       validate_certs: false
 
   - name: Add new EPGs
