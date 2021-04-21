@@ -99,8 +99,8 @@
       host: "{{ aci_host }}"
       username: "{{ aci_username }}"
       password: "{{ aci_password }}"
-      block_name: from-[vlan-20]-to-[vlan-50]
       pool: Wtest-VLAN-Pool
+      block_name: [vlan-20]-to-[vlan-50]
       block_start: 20
       block_end: 50
       pool_allocation_mode: static
