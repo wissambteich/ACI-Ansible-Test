@@ -166,6 +166,22 @@
       scope: application-profile
       state: present
       validate_certs: false
+      
+  - name: Add a new contract subject
+    aci_contract_subject:
+      host: "{{ aci_host }}"
+      username: "{{ aci_username }}"
+      password: "{{ aci_password }}"
+      tenant: "{{ aci_tenant }}"
+      contract: "{{ aci_contract }}"
+      subject: default
+      description: test
+      reverse_filter: yes
+      priority: level1
+      dscp: unspecified
+      state: present
+    register: query_result
+      validate_certs: false
 
   - name: Add new EPGs
     aci_epg:
