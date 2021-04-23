@@ -180,8 +180,9 @@
       priority: level1
       dscp: unspecified
       state: present
-    register: query_result
       validate_certs: false
+    register: query_result
+
 
   - name: Add new EPGs
     aci_epg:
