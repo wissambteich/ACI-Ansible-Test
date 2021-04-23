@@ -96,18 +96,18 @@
       state: present
       validate_certs: false
       
-#  - name: Add a new VLAN encap block
- #   aci_vlan_pool_encap_block:
-  #    host: "{{ aci_host }}"
-   #   username: "{{ aci_username }}"
-    #  password: "{{ aci_password }}"
-   #   pool: Wtest-VLAN-Pool
-   #   block_start: 20
-   #   block_end: 50
-   #   pool_allocation_mode: static
-   #   block_name: "{{ block_name }}"
-   #   state: present
-   #   validate_certs: false
+  - name: Add a new VLAN encap block
+    aci_vlan_pool_encap_block:
+      host: "{{ aci_host }}"
+      username: "{{ aci_username }}"
+      password: "{{ aci_password }}"
+      pool: "{{ vlan_pool }}"
+      block_start: 20
+      block_end: 50
+      pool_allocation_mode: static
+      block_name: "{{ block_name }}"
+      state: present
+      validate_certs: false
       
   - name: Add a new physical domain
     aci_domain:
