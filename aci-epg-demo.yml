@@ -11,7 +11,7 @@
     aci_bd: Wtest-bridge
     aci_vrf: Wtest-vrf
     phys_domain: Wtest-phys_dom
-    block_name: [20-50]
+    block_name: 20-50
     aci_aep: Wtest-AEP
     vlan_pool: Wtest-VLAN-Pool
     aci_epgs:
