@@ -14,6 +14,7 @@
     block_name: 20-50
     aci_aep: Wtest-AEP
     vlan_pool: Wtest-VLAN-Pool
+    aci_contract: cali_to_flo
     aci_epgs:
 #      - _epg: FirstState
  #       _desc: First state EPG
@@ -152,6 +153,18 @@
       pool_type: vlan
       pool_allocation_mode: static
       state: present     
+      validate_certs: false
+      
+  - name: Add a new contract
+    aci_contract:
+      host: "{{ aci_host }}"
+      username: "{{ aci_username }}"
+      password: "{{ aci_password }}"
+      tenant: "{{ aci_tenant }}"
+      contract: "{{ aci_contract }}"
+      description: Communication between web-servers and database
+      scope: application-profile
+      state: present
       validate_certs: false
 
   - name: Add new EPGs
