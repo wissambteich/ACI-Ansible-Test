@@ -223,7 +223,7 @@
       filter: web_filter
       log: log
       state: present      
-      validate_certs: false   
+      validate_certs: false  
 
   - name: Add new EPGs
     aci_epg:
@@ -271,4 +271,17 @@
       contract_type: provider
       state: present
       validate_certs: false
+      
+  - name: Add a new contract to EPG binding
+    aci_epg_to_contract:
+      host: "{{ aci_host }}"
+      username: "{{ aci_username }}"
+      password: "{{ aci_password }}"
+      tenant: "{{ aci_tenant }}"
+      ap: "{{ aci_ap_name }}"
+      epg: California
+      contract: cali_to_flo
+      contract_type: consumer
+      state: present
+      validate_certs: false      
       
