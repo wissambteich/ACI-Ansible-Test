@@ -15,6 +15,8 @@
     aci_aep: Wtest-AEP
     vlan_pool: Wtest-VLAN-Pool
     aci_contract: cali_to_flo
+    filter_entry: http
+    ether_name: ip
     aci_epgs:
 #      - _epg: FirstState
  #       _desc: First state EPG
@@ -193,6 +195,20 @@
       tenant: "{{ aci_tenant }}"
       state: present
       validate_certs: false
+      
+  - name: Add a new filter entry
+    aci_filter_entry:
+      host: "{{ aci_host }}"
+      username: "{{ aci_username }}"
+      password: "{{ aci_password }}"
+      state: present
+      entry: "{{ filter_entry }}"
+      tenant: "{{ aci_tenant }}"
+      ether_name: "{{  ether_name }}"
+  #    icmp_msg_type: "{{ icmp_msg_type }}"
+      filter: web_filter
+      description: Filter entry for web_filter
+      validate_certs: false   
 
   - name: Add new EPGs
     aci_epg:
