@@ -19,7 +19,7 @@
     ether_name: ip_protocol
     lldp_policy: LLDP-Policy
     cdp_policy: cdp-Policy
-    port-channel: Port-Channel_Policy
+  #  port-channel: Port-Channel_Policy
     link-level: Link-Level-Policy
 
   tasks:      
@@ -48,7 +48,7 @@
       host: "{{ aci_host }}"
       username: "{{ aci_username }}"
       password: "{{ aci_password }}"
-      port_channel: "{{ port-channel }}"
+      port_channel: Port-Channel_Policy
       description: LACP Port Channel Created via Ansible
       min_links: 1
       max_links: 16
@@ -80,7 +80,7 @@
       link_level_policy: "{{ Link-Level }}"
       cdp_policy: "{{ cdp_policy }}"
       lldp_policy: "{{ lldp_policy }}"
-      port_channel_policy: "{{ port-channel }}"
+      port_channel_policy: Port-Channel_Policy
       state: present
       validate_certs: false
       
