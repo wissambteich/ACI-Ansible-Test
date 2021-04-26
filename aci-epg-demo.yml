@@ -176,7 +176,7 @@
       password: "{{ aci_password }}"
       tenant: "{{ aci_tenant }}"
       contract: "{{ aci_contract }}"
-      subject: default
+      subject: Web-filter-subject
       description: test
       reverse_filter: yes
       priority: level1
