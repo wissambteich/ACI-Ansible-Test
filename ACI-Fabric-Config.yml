@@ -27,3 +27,4 @@
       password: "{{ aci_password }}"
       admin_state: true
       state: present
+      validate_certs: false
