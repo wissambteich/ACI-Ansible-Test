@@ -19,7 +19,7 @@
     ether_name: ip_protocol
     lldp_policy: LLDP-Policy
     cdp_policy: cdp-Policy
-    port-channel_policy: Port-Channel_Policy
+    port-channel-policy: Port-Channel_Policy
     link-level-policy: Link-Level-Policy
 
   tasks:      
