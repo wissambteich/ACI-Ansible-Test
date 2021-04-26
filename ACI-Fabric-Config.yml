@@ -19,8 +19,8 @@
     ether_name: ip_protocol
     lldp_policy: LLDP-Policy
     cdp_policy: cdp-Policy
-    port-channel-policy: Port-Channel_Policy
-    link-level-policy: Link-Level-Policy
+    port-channel: Port-Channel_Policy
+    link-level: Link-Level-Policy
 
   tasks:      
   - name: Create CDP Interface Policy to enable CDP
