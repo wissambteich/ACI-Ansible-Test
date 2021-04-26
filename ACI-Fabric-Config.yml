@@ -29,6 +29,16 @@
       state: present
       validate_certs: false
 
+  - name: Add a LLDP interface policy
+    aci_interface_policy_lldp:
+      host: "{{ aci_host }}"
+      username: "{{ aci_username }}"
+      password: "{{ aci_password }}"
+      lldp_policy: ALLOUSA LLDP Policy Created via Ansible
+      description: LLDP Policy Created via Ansible
+      state: present
+      validate_certs: false
+
   - name: Add a port channel interface policy
     aci_interface_policy_port_channel:
       host: "{{ aci_host }}"
