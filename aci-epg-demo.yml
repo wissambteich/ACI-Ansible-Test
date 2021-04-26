@@ -211,6 +211,19 @@
       filter: web_filter
       description: Filter entry for web_filter
       validate_certs: false   
+      
+  - name: Add a new contract subject to filer binding
+    aci_contract_subject_to_filter:
+      host: "{{ aci_host }}"
+      username: "{{ aci_username }}"
+      password: "{{ aci_password }}"
+      tenant: "{{ aci_tenant }}"
+      contract: "{{ aci_contract }}"
+      subject: Web-filter-subject
+      filter: web_filter
+      log: log
+      state: present      
+      validate_certs: false   
 
   - name: Add new EPGs
     aci_epg:
