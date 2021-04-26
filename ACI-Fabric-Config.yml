@@ -56,19 +56,19 @@
       state: present
       validate_certs: false
       
-  - name: Add a Link Level Policy
-    aci_interface_policy_link_level:
-      host: "{{ aci_host }}"
-      username: "{{ aci_username }}"
-      password: "{{ aci_password }}"
-      link_level_policy: "{{ Link_Level }}"  
-      description: Link Level Policy Created via Ansible
-      auto_negotiation: on
-      speed: 100M
-      link_debounce_interval: 100
-      forwarding_error_correction: cl91-rs-fec
-      state: present
-      validate_certs: false    
+ # - name: Add a Link Level Policy
+   # aci_interface_policy_link_level:
+     # host: "{{ aci_host }}"
+     # username: "{{ aci_username }}"
+     # password: "{{ aci_password }}"
+     # link_level_policy: "{{ Link_Level }}"  
+     # description: Link Level Policy Created via Ansible
+     # auto_negotiation: on
+     # speed: 100M
+     # link_debounce_interval: 100
+     # forwarding_error_correction: cl91-rs-fec
+     # state: present
+     # validate_certs: false    
       
   - name: Create a Virtual Port Channel (VPC) Interface Policy Group
     aci_interface_policy_leaf_policy_group:
@@ -77,7 +77,7 @@
       password: "{{ aci_password }}"
       lag_type: node
       policy_group: VPC-Policy-Group
-      link_level_policy: "{{ Link_Level }}"
+     # link_level_policy: "{{ Link_Level }}"
       cdp_policy: "{{ cdp_policy }}"
       lldp_policy: "{{ lldp_policy }}"
       port_channel_policy: Port-Channel_Policy
