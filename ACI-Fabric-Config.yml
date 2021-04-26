@@ -1,0 +1,28 @@
+---
+- name: Create a Tenant, App profile, VRF, Bridge Domain, and many EPGs
+  hosts: localhost
+  gather_facts: false
+  vars:
+    aci_host: sandboxapicdc.cisco.com
+    aci_username: admin
+    aci_password: ciscopsdt
+    aci_tenant: Wtest-tenant
+    aci_ap_name: Wtest-apps
+    aci_bd: Wtest-bridge
+    aci_vrf: Wtest-vrf
+    phys_domain: Wtest-phys_dom
+    block_name: 20-50
+    aci_aep: Wtest-AEP
+    vlan_pool: Wtest-VLAN-Pool
+    aci_contract: cali_to_flo
+    filter_entry: http
+    ether_name: ip_protocol
+
+  - name: Create CDP Interface Policy to enable CDP
+    aci_interface_policy_cdp:
+    name: Ansible_CDP_Interface_Policy
+    host: apic.example.com
+    username: admin
+    password: adminpass
+    admin_state: true
+    state: present
