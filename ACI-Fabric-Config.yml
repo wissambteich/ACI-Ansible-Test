@@ -28,3 +28,16 @@
       admin_state: true
       state: present
       validate_certs: false
+
+  - name: Add a port channel interface policy
+    aci_interface_policy_port_channel:
+      host: "{{ aci_host }}"
+      username: "{{ aci_username }}"
+      password: "{{ aci_password }}"
+      port_channel: LACP_Port-Channel
+      description: LACP Port Channel Created via Ansible
+      min_links: 1
+      max_links: 16
+      mode: active
+      state: present
+      validate_certs: false
