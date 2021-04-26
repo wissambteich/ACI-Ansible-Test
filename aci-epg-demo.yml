@@ -259,3 +259,16 @@
     loop_control:
       loop_var: all2_epgs
 
+  - name: Add a new contract to EPG binding
+    aci_epg_to_contract:
+      host: "{{ aci_host }}"
+      username: "{{ aci_username }}"
+      password: "{{ aci_password }}"
+      tenant: "{{ aci_tenant }}"
+      ap: "{{ aci_ap_name }}"
+      epg: Florida
+      contract: cali_to_flo
+      contract_type: provider
+      state: present
+      validate_certs: false
+      
