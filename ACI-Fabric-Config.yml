@@ -18,11 +18,12 @@
     filter_entry: http
     ether_name: ip_protocol
 
+  tasks:      
   - name: Create CDP Interface Policy to enable CDP
     aci_interface_policy_cdp:
-    name: Ansible_CDP_Interface_Policy
-    host: apic.example.com
-    username: admin
-    password: adminpass
-    admin_state: true
-    state: present
+      name: Ansible_CDP_Interface_Policy
+      host: "{{ aci_host }}"
+      username: "{{ aci_username }}"
+      password: "{{ aci_password }}"
+      admin_state: true
+      state: present
