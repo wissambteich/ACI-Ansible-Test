@@ -217,7 +217,7 @@
       tenant: "{{ aci_tenant }}"
       ether_type: ip
       ip_protocol: tcp
-      dst_port: 80
+      dst_port: '80'
   #    icmp_msg_type: "{{ icmp_msg_type }}"
       filter: web_filter
       description: Filter entry for web_filter
