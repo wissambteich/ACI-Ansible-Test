@@ -17,6 +17,9 @@
     aci_contract: cali_to_flo
     filter_entry: http
     ether_name: ip_protocol
+    lldp_policy: LLDP-Policy
+    cdp_policy: cdp-Policy
+    port-channel_policy: Port-Channel_Policy
 
   tasks:      
   - name: Create CDP Interface Policy to enable CDP
@@ -51,3 +54,18 @@
       mode: active
       state: present
       validate_certs: false
+      
+  - name: Create a Virtual Port Channel (VPC) Interface Policy Group
+    aci_interface_policy_leaf_policy_group:
+      host: "{{ aci_host }}"
+      username: "{{ aci_username }}"
+      password: "{{ aci_password }}"
+      lag_type: node
+      policy_group: VPC-Policy-Group
+      link_level_policy: whateverlinklevelpolicy
+      cdp_policy: "{{ cdp_policy }}"
+      lldp_policy: "{{ lldp_policy }}"
+      port_channel_policy: "{{ port-channel_policy }}"
+      state: present
+      validate_certs: false
+      
