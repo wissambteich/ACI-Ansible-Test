@@ -16,7 +16,7 @@
     vlan_pool: Wtest-VLAN-Pool
     aci_contract: cali_to_flo
     filter_entry: http
-    ether_name: ip
+    ether_name: ip_protocol
     aci_epgs:
 #      - _epg: FirstState
  #       _desc: First state EPG
