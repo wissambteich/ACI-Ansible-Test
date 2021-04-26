@@ -87,6 +87,17 @@
       vrf: "{{ aci_vrf }}"
       state: present
       validate_certs: false
+      
+  - name: Create a subnet
+    aci_bd_subnet:
+      host: "{{ aci_host }}"
+      username: "{{ aci_username }}"
+      password: "{{ aci_password }}"
+      tenant: "{{ aci_tenant }}"
+      bd: "{{ aci_bd }}"
+      gateway: 10.10.1.1
+      mask: 24
+      state: present   
   
   - name: Add a new VLAN Pool
     aci_vlan_pool:
