@@ -84,3 +84,37 @@
       state: present
       validate_certs: false
       
+  - name: Add a new leaf_interface_profile
+    aci_interface_policy_leaf_profile:
+      host: "{{ aci_host }}"
+      username: "{{ aci_username }}"
+      password: "{{ aci_password }}"
+      interface_profile: ACI_leafintprfname
+      description:  leafintprfname description
+      state: present
+      validate_certs: false
+ 
+  - name: creating a Leaf Profile with description
+    aci_switch_policy_leaf_profile:
+      host: "{{ aci_host }}"
+      username: "{{ aci_username }}"
+      password: "{{ aci_password }}"
+      leaf_profile: ACI_Leaf-Profile
+      description: sw_description
+      state: present
+      validate_certs: false
+  
+  - name: adding a switch policy leaf profile selector associated Node Block range (w/ policy group)
+    aci_switch_leaf_selector:
+      host: "{{ aci_host }}"
+      username: "{{ aci_username }}"
+      password: "{{ aci_password }}"
+      leaf_profile: ACI_Leaf-Profile
+      leaf: leaf_selector_name
+      leaf_node_blk: node_blk_name
+      from: 1011
+      to: 1011
+      policy_group: VPC-Policy-Group
+      state: present
+      validate_certs: false
+      
