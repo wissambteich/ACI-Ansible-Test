@@ -123,7 +123,7 @@
       host: "{{ aci_host }}"
       username: "{{ aci_username }}"
       password: "{{ aci_password }}"
-      interface_profile: ACI_leafintprofile
+      leaf_interface_profile: ACI_leafintprofile
       access_port_selector: ACI_accessportselector
       port_blk: ACI_leafportblk
       from_port: 13
