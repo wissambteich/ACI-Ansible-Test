@@ -89,7 +89,7 @@
       host: "{{ aci_host }}"
       username: "{{ aci_username }}"
       password: "{{ aci_password }}"
-      interface_profile: ACI_leafintprfname
+      leaf_interface_profile: ACI_leafintprfname
       description:  leafintprfname description
       state: present
       validate_certs: false
