@@ -126,8 +126,8 @@
       leaf_interface_profile: ACI_leafintprofile
       access_port_selector: ACI_accessportselector
       leaf_port_blk: ACI_leafportblk
-      from_port: 13
-      to_port: 16
+      from_port: '13'
+      to_port: '16'
       policy_group: VPC-Policy-Group
       state: present
       validate_certs: false     
