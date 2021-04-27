@@ -118,17 +118,64 @@
       state: present
       validate_certs: false
       
-  - name: Associate an access port block (single port) to an interface selector
-    aci_access_port_block_to_access_port:
+  - name: Associate an Interface Access Port Selector to an Interface Policy Leaf Profile with a Policy Group
+    aci_access_port_to_interface_policy_leaf_profile:
       host: "{{ aci_host }}"
       username: "{{ aci_username }}"
       password: "{{ aci_password }}"
-      interface_profile: ACI_leafintprf
+      interface_profile: ACI_leafintprofile
       access_port_selector: ACI_accessportselector
-      port_blk: leafportblkname
+      port_blk: ACI_leafportblk
       from_port: 13
-      to_port: 13
+      to_port: 16
+      policy_group: VPC-Policy-Group
       state: present
-      validate_certs: false
+      validate_certs: false     
+ 
+  - name: adding a switch policy leaf profile selector associated Node Block range (w/ policy group)
+    aci_switch_leaf_selector:
+      host: "{{ aci_host }}"
+      username: "{{ aci_username }}"
+      password: "{{ aci_password }}"
+      leaf_profile: ACI_sw_name
+      leaf: leaf-1
+      leaf_node_blk: node_blk_name
+      from: 1011
+      to: 1011
+      policy_group: VPC-Policy-Group
+      state: present
+      validate_certs: false     
+      
+  
+ # - name: Associate an access port block (single port) to an interface selector
+  #  aci_access_port_block_to_access_port:
+   #   host: "{{ aci_host }}"
+    #  username: "{{ aci_username }}"
+     # password: "{{ aci_password }}"
+    #  interface_profile: ACI_leafintprf
+    #  access_port_selector: ACI_accessportselector
+    #  port_blk: leafportblkname
+    #  from_port: 13
+    #  to_port: 13
+    #  state: present
+    #  validate_certs: false
+      
+#  - name: Associate an access sub port block (single port) to an interface selector
+ #   aci_access_sub_port_block_to_access_port:
+  #    host: "{{ aci_host }}"
+  #    username: "{{ aci_username }}"
+  #    password: "{{ aci_password }}"
+  #    leaf_interface_profile: leafintprfname
+  #    access_port_selector: accessportselectorname
+  #    leaf_port_blk: leafportblkname
+  #    from_port: 13
+  #    to_port: 13
+  #    from_sub_port: 1
+  #    to_sub_port: 1
+  #    state: present
+  #    validate_certs: false
+      
+
+      
       
       
