@@ -118,3 +118,17 @@
       state: present
       validate_certs: false
       
+  - name: Associate an access port block (single port) to an interface selector
+    aci_access_port_block_to_access_port:
+      host: "{{ aci_host }}"
+      username: "{{ aci_username }}"
+      password: "{{ aci_password }}"
+      interface_profile: ACI_leafintprf
+      access_port_selector: ACI_accessportselector
+      port_blk: leafportblkname
+      from_port: 13
+      to_port: 13
+      state: present
+      validate_certs: false
+      
+      
