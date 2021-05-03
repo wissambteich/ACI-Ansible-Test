@@ -49,7 +49,7 @@
       username: "{{ aci_username }}"
       password: "{{ aci_password }}"
       tenant: "{{ aci_tenant }}"
-      description: Greg Ansible Testing
+      description: Tenant Created via Ansible
       state: present
       validate_certs: false
 
@@ -60,7 +60,7 @@
       password: "{{ aci_password }}"
       tenant: "{{ aci_tenant }}"
       ap: "{{ aci_ap_name }}"
-      description: Greg Ansible Testing
+      description: AP Created via Ansible
       state: present
       validate_certs: false
 
@@ -71,7 +71,7 @@
       password: "{{ aci_password }}"
       vrf: "{{ aci_vrf }}"
       tenant: "{{ aci_tenant }}"
-      descr: Greg Ansible Testing
+      descr: VRF Created via Ansible
       policy_control_preference: enforced
       policy_control_direction: ingress
       state: present
