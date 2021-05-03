@@ -18,8 +18,6 @@
     filter_entry: http
     ether_name: ip_protocol
     aci_epgs:
-#      - _epg: FirstState
- #       _desc: First state EPG
       - _epg: Web
         _desc: Web EPG
       - _epg: DB
@@ -32,8 +30,6 @@
         _desc: Oldest city
       - _epg: Jounieh
         _desc: Monaco 
-      - _epg: Washington
-        _desc: rain I think
       - _epg: California
         _desc: beautiful to visit
       - _epg: Florida
