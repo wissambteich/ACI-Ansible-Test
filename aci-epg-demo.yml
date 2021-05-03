@@ -50,7 +50,7 @@
       password: "{{ aci_password }}"
       tenant: "{{ aci_tenant }}"
       description: Greg Ansible Testing
-      state: present
+      state: absent
       validate_certs: false
 
   - name: Add a new AP
