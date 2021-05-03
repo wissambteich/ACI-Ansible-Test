@@ -6,7 +6,7 @@
     aci_host: sandboxapicdc.cisco.com
     aci_username: admin
     aci_password: ciscopsdt
-    aci_tenant: Wtest-tenant
+    aci_tenant: WDemo-tenant
     aci_ap_name: Wtest-apps
     aci_bd: Wtest-bridge
     aci_vrf: Wtest-vrf
@@ -20,20 +20,20 @@
     aci_epgs:
 #      - _epg: FirstState
  #       _desc: First state EPG
-      - _epg: Ayrizona
-        _desc: really hot
-      - _epg: Utah
-        _desc: boring
-      - _epg: Nevada
-        _desc: hot and expensive
-      - _epg: Oklahoma
-        _desc: wind whips
-      - _epg: Nebraska
-        _desc: corn right...corn
-      - _epg: Idaho
-        _desc: waffle fries
-  #    - _epg: Washington
-   #     _desc: rain I think
+      - _epg: Web
+        _desc: Web EPG
+      - _epg: DB
+        _desc: DB EPG
+      - _epg: APP 
+        _desc: APP EPG
+      - _epg: Beirut
+        _desc: Beirut the capital
+      - _epg: Byblos
+        _desc: Oldest city
+      - _epg: Jounieh
+        _desc: Monaco 
+      - _epg: Washington
+        _desc: rain I think
       - _epg: California
         _desc: beautiful to visit
       - _epg: Florida
@@ -50,7 +50,7 @@
       password: "{{ aci_password }}"
       tenant: "{{ aci_tenant }}"
       description: Greg Ansible Testing
-      state: absent
+      state: present
       validate_certs: false
 
   - name: Add a new AP
