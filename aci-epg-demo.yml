@@ -273,7 +273,7 @@
       password: "{{ aci_password }}"
       tenant: "{{ aci_tenant }}"
       ap: "{{ aci_ap_name }}"
-      epg: Florida
+      epg: Web
       contract: web-to-app
       contract_type: provider
       state: present
@@ -286,7 +286,7 @@
       password: "{{ aci_password }}"
       tenant: "{{ aci_tenant }}"
       ap: "{{ aci_ap_name }}"
-      epg: California
+      epg: APP
       contract: web-to-app
       contract_type: consumer
       state: present
