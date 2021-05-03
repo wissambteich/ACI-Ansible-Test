@@ -14,7 +14,7 @@
     block_name: 20-50
     aci_aep: Wtest-AEP
     vlan_pool: Wtest-VLAN-Pool
-    aci_contract: cali_to_flo
+    aci_contract: web-to-app
     filter_entry: http
     ether_name: ip_protocol
     aci_epgs:
@@ -46,7 +46,7 @@
       password: "{{ aci_password }}"
       tenant: "{{ aci_tenant }}"
       description: Tenant Created via Ansible
-      state: present
+      state: absent
       validate_certs: false
 
   - name: Add a new AP
@@ -274,7 +274,7 @@
       tenant: "{{ aci_tenant }}"
       ap: "{{ aci_ap_name }}"
       epg: Florida
-      contract: cali_to_flo
+      contract: web-to-app
       contract_type: provider
       state: present
       validate_certs: false
@@ -287,7 +287,7 @@
       tenant: "{{ aci_tenant }}"
       ap: "{{ aci_ap_name }}"
       epg: California
-      contract: cali_to_flo
+      contract: web-to-app
       contract_type: consumer
       state: present
       validate_certs: false      
