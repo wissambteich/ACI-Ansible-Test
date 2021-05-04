@@ -6,7 +6,7 @@
     aci_host: sandboxapicdc.cisco.com
     aci_username: admin
     aci_password: ciscopsdt
-    aci_tenant: WissDemo-tenant
+    aci_tenant: BMB-Demo-tenant
     aci_ap_name: Wtest-apps
     aci_bd: Wtest-bridge
     aci_vrf: Wtest-vrf
