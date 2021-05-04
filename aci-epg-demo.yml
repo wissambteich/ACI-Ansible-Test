@@ -46,7 +46,7 @@
       password: "{{ aci_password }}"
       tenant: "{{ aci_tenant }}"
       description: Tenant Created via Ansible
-      state: absent
+      state: present
       validate_certs: false
 
   - name: Add a new AP
